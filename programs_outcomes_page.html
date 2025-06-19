@@ -19,13 +19,18 @@
   <header>
     <nav class="main-nav">
       <div class="container nav-container">
-        <a href="index.html" class="nav-brand">Purpose Travel</a>
+        <a href="index.html" class="nav-brand">
+          <img src="images/logo.svg" alt="Purpose Travel" class="nav-logo" loading="lazy">
+        </a>
         <button class="nav-toggle" aria-label="toggle navigation">
           <span class="hamburger"></span>
         </button>
         <ul class="nav-menu">
           <li><a href="programs_outcomes_page.html" class="active">Program Models</a></li>
-          <li><a href="index.html#schedule-call" class="btn-nav">Schedule a Call</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#schedule-call" class="btn-nav">Schedule a Call</a></li>
         </ul>
       </div>
     </nav>
@@ -209,7 +214,7 @@
           <a href="index.html" class="footer-brand">
             <img src="images/logo.svg" alt="Purpose Travel" class="footer-logo" />
           </a>
-          <p class="footer-tagline">Custom faculty-led study abroad programs for sport management.</p>
+          <p class="footer-tagline">Custom faculty-led study abroad programs for sport related programs.</p>
           <span class="footer-contact-item">Email: <a href="mailto:info@purposetravel.com">info@purposetravel.com</a></span>
           <span class="footer-contact-item">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></span>
           <div class="footer-social">
@@ -226,17 +231,12 @@
         </div>
         <div class="footer-card">
           <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs_outcomes_page.html">Programs & Outcomes</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
-          <form name="footer-contact" method="POST" data-netlify="true" class="footer-form">
-            <input type="hidden" name="form-name" value="footer-contact">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="2" required></textarea>
-            <button type="submit" class="btn-primary">Send</button>
-          </form>
         </div>
       </div>
       <hr class="footer-divider">
