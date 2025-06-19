@@ -156,7 +156,7 @@
     text-align: center;
     padding: 6rem 20px 5rem 20px;
     min-height: 60vh;
-    background: url('images/hero-sport-study.jpg') center/cover no-repeat;
+    background: url('../images/hero-sport-study.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
