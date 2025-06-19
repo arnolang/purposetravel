@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
   <header>
@@ -34,6 +35,7 @@
     </nav>
     <div class="hero">
       <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
       <div class="container">
         <h1>Take Your Sport Management Course Abroad — Without the Extra Work</h1>
         <p>We design custom, faculty-led programs focused on your curriculum. You teach. We handle everything else.</p>
@@ -66,7 +68,7 @@
         <h2>A Program Model for Every Academic Goal</h2>
         <p class="section-subtitle">Whether you seek a comprehensive industry overview or a deep dive into a specific discipline, our flexible frameworks are designed to fit your curriculum.</p>
         <div class="model-grid">
-          <div class="model-card">
+          <div class="model-card" data-aos="fade-up">
             <img src="images/programs/signature.svg" alt="Signature Program" class="model-image" loading="lazy">
             <h3 class="model-title">The Signature Program</h3>
             <p class="model-tagline">Comprehensive Experience</p>
@@ -78,7 +80,7 @@
             </ul>
             <a href="programs_outcomes_page.html#signature-program" class="btn-secondary">Explore Signature Programs</a>
           </div>
-          <div class="model-card">
+          <div class="model-card" data-aos="fade-up">
             <img src="images/programs/deep-dive.svg" alt="Academic Deep Dive" class="model-image" loading="lazy">
             <h3 class="model-title">The Academic Deep Dive</h3>
             <p class="model-tagline">Specialized Focus</p>
@@ -109,11 +111,11 @@
       <div class="container">
         <h2>What Your Colleagues Are Saying</h2>
         <div class="testimonial-container">
-          <div class="testimonial-item">
+          <div class="testimonial-item" data-aos="fade-in">
             <blockquote>"Purpose Travel transformed our study abroad program. They handled every logistical detail while connecting our students with top-tier sport industry professionals. It was seamless from start to finish."</blockquote>
             <p class="testimonial-author">— Faculty, Guilford College</p>
           </div>
-          <div class="testimonial-item">
+          <div class="testimonial-item" data-aos="fade-in">
             <blockquote>"I didn't lift a finger for logistics. My students had VIP access to elite clubs and guest lectures that I could never have arranged on my own. The value is immense."</blockquote>
             <p class="testimonial-author">— Prof. J. Smith, Sport Management</p>
           </div>
@@ -254,6 +256,13 @@
     }
     window.addEventListener('scroll', showFooterOnScroll);
     showFooterOnScroll();
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true
+    });
   </script>
 </body>
 </html>
