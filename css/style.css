@@ -55,13 +55,13 @@
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   .btn-primary:hover {
-    background-color: #e6a200;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: #e6a200;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
   .btn-secondary {
     display: inline-block;
@@ -151,30 +151,25 @@
   
   /* --- 5. Layout & Sections --- */
   .hero {
-    background-color: var(--primary-color);
+    position: relative;
     color: var(--white);
     text-align: center;
-    padding: 4rem 20px;
-    position: relative;
+    padding: 6rem 20px 5rem 20px;
+    min-height: 60vh;
+    background: url('images/hero-sport-study.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
   
-  .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../images/hero-bg.svg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    z-index: 0;
+  .hero-bg, .hero-overlay {
+    display: none;
   }
   
   .hero .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   
   .section-light, .section-white, .section-dark, .section-cta { padding: 60px 0; }
@@ -288,7 +283,9 @@
     flex-grow: 1;
   }
   .model-features li {
-    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.7em;
   }
   .model-features li::before {
     content: '✓ ';
@@ -1096,6 +1093,27 @@
     .footer-card {
       min-width: 0;
       padding: 1.5rem 1rem;
+    }
+  }
+  
+  .feature-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+  
+  [data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+  }
+  [data-aos].aos-animate {
+    opacity: 1;
+  }
+  
+  @media (max-width: 700px) {
+    .hero {
+      padding: 3rem 10px 2.5rem 10px;
+      min-height: 40vh;
     }
   }
   
