@@ -241,10 +241,12 @@
   }
   
   .partner-logo {
-    max-height: 7vw;
-    min-height: 60px;
-    max-width: 95%;
+    max-width: 220px;
+    max-height: 90px;
     width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     filter: grayscale(100%);
     opacity: 0.9;
     transition: all 0.3s ease;
@@ -252,8 +254,11 @@
     mix-blend-mode: multiply;
     background: transparent;
     vertical-align: middle;
-    display: block;
-    margin: 0 auto;
+  }
+  /* Specific adjustment for Emory & Henry University logo */
+  .partner-logo[src*="emory-henry-uniniversity-withbackground.svg"] {
+    max-width: 180px;
+    max-height: 70px;
   }
   
   .partner-logo:hover {
@@ -345,9 +350,46 @@
   .steps > div { background: var(--white); padding: 2.5rem 1.5rem 2.5rem 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid var(--accent-color); }
   
   .testimonial-container { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-  .testimonial-item { text-align: center; background: var(--light-bg); padding: 2rem; border-radius: 8px; }
+  .testimonial-item { text-align: center; background: var(--light-bg); padding: 2rem; border-radius: 8px; position: relative; padding-left: 56px; min-height: 64px; }
   .testimonial-item blockquote { font-size: 1.2rem; font-style: italic; margin: 0 0 1rem 0; padding: 0; color: var(--text-color); }
   .testimonial-author { font-style: italic; color: #666; font-size: 1rem; }
+  
+  .testimonial-photo-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFC72C 60%, #F4B400 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 3px solid #fff;
+  }
+  .testimonial-photo-circle img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+  }
+  
+  .testimonial-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    display: block;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .university-grid {
     display: grid;
@@ -1242,6 +1284,30 @@
       padding: 3rem 10px 2.5rem 10px;
       min-height: 40vh;
     }
+    .model-grid,
+    .component-grid,
+    .university-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.2rem;
+    }
+    .success-stories {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.2rem;
+    }
+    .story-card {
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
+      flex: 1 1 100%;
+      padding: 1.2rem 0.7rem;
+    }
+    .container {
+      padding: 0 8px;
+    }
+    .section-white, .section-light, .section-dark, .section-cta {
+      padding: 32px 0;
+    }
   }
   
   @media print {
@@ -1600,5 +1666,108 @@
     max-width: 960px;
     margin: 0 auto;
   }
+}
+
+/* Footer Contact Us Button */
+.btn-footer-contact {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 1.1rem auto 1.2rem auto;
+  padding: 13px 0;
+  background: var(--accent-color);
+  color: #003366;
+  font-weight: bold;
+  font-size: 1.13rem;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-footer-contact:hover,
+.btn-footer-contact:focus {
+  background: #e6a200;
+  color: #002244;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+@media (max-width: 600px) {
+  .btn-footer-contact {
+    font-size: 1.05rem;
+    padding: 12px 0;
+    max-width: 98%;
+  }
+}
+
+.text-logo {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  letter-spacing: 0.01em;
+}
+.text-logo-sport {
+  font-weight: 700;
+  color: #FFC72C;
+  letter-spacing: 0.03em;
+}
+.text-logo-studyabroad {
+  font-weight: 400;
+  color: #002D62;
+}
+
+/* Adjust logo size for nav and footer */
+.nav-brand .text-logo {
+  font-size: 1.6rem;
+  height: 25.6px;
+  line-height: 25.6px;
+  display: flex;
+  align-items: center;
+}
+.footer-brand .text-logo {
+  font-size: 1.7rem;
+}
+
+@media (max-width: 600px) {
+  .nav-brand .text-logo {
+    font-size: 1.3rem;
+  }
+  .footer-brand .text-logo {
+    font-size: 1.1rem;
+  }
+}
+
+.footer-brand,
+.footer-brand:visited,
+.footer-brand .text-logo,
+.footer-brand .text-logo *,
+.footer-brand span,
+.footer-brand span * {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.nav-brand,
+.nav-brand:focus,
+.nav-brand:hover,
+.nav-brand .text-logo,
+.nav-brand .text-logo *,
+.nav-brand span,
+.nav-brand span * {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.brand-name {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  /* Easy to find and update for future rebranding */
 }
   
