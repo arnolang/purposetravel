@@ -602,21 +602,18 @@
     .layout-split { flex-direction: row; text-align: left; }
     section:nth-of-type(even) .layout-split { flex-direction: row-reverse; }
     .hero-content {
-      text-align: left;
+      text-align: center;
       max-width: 700px;
-      margin-left: 0;
-      margin-right: auto;
+      margin: 0 auto;
     }
     .hero-content h1,
     .hero-content p {
-      text-align: left;
+      text-align: inherit;
     }
     .hero-content .btn-primary {
-      display: block;
-      margin-left: 0;
-      margin-right: auto;
+      display: inline-block;
+      margin: 1.5rem auto 0 auto;
       text-align: center;
-      width: fit-content;
     }
     .steps {
       flex-direction: row;
@@ -1702,21 +1699,39 @@
 }
 
 .text-logo {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: baseline;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .text-logo-sport {
-  font-weight: 700;
-  color: #FFC72C;
-  letter-spacing: 0.03em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--accent-color);
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  margin-right: 0.28em;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 .text-logo-studyabroad {
-  font-weight: 400;
-  color: #002D62;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary-color);
+  font-size: 2.1rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+@media (max-width: 600px) {
+  .text-logo-sport {
+    font-size: 1.4rem;
+  }
+  .text-logo-studyabroad {
+    font-size: 1.2rem;
+  }
 }
 
 /* Adjust logo size for nav and footer */
