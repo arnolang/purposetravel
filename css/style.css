@@ -37,7 +37,7 @@
   h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem; }
   h2 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1rem; text-align: center;}
   h3 { font-size: 1.5rem; line-height: 1.4; margin-bottom: 0.8rem; }
-  h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+  h4 { font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem; margin-bottom: 0.6rem; }
   p { margin-bottom: 1.2rem; font-size: 1.1rem; }
   .section-subtitle {
     text-align: center;
@@ -950,6 +950,8 @@
     gap: 1.1rem;
     max-width: 600px;
     margin: 0 auto 2.5rem auto;
+    box-sizing: border-box;
+    width: 100%;
   }
   .interest-form input,
   .interest-form textarea {
@@ -1019,6 +1021,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    width: 100%;
   }
   .calendly-card-title {
     color: var(--primary-color);
@@ -1058,8 +1062,6 @@
   .cta-cards-stack .calendly-card,
   .cta-cards-stack .interest-form {
     margin: 0;
-    max-width: 600px;
-    width: 100%;
   }
   .cta-cards-stack .interest-form-wrapper {
     margin: 0;
