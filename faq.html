@@ -149,7 +149,7 @@
         <div class="faq-item">
           <h4>How do we start the conversation?</h4>
           <div class="faq-answer">
-            <p>We'd love to hear about your course and goals.<br><a href="index.html#schedule-call" class="btn-primary" style="margin-top:0.7rem;display:inline-block;">Schedule a discovery call</a></p>
+            <p>We'd love to hear about your course and goals.<br><button type="button" class="btn-primary" id="faqEndCalendlyBtn" style="margin-top:0.7rem;display:inline-block;">Schedule a discovery call</button></p>
           </div>
         </div>
       </div>
@@ -208,6 +208,15 @@
       </div>
     </div>
   </footer>
+  <a href="index.html#schedule-call" class="sticky-cta-mobile">Schedule a Call</a>
+  <button type="button" class="floating-contact-cta" id="floatingContactCta" style="display:none;">💬 Have questions? Schedule a quick call</button>
+  <div id="calendlyModal" class="calendly-modal" style="display:none;">
+    <div class="calendly-modal-backdrop" id="calendlyModalBackdrop"></div>
+    <div class="calendly-modal-content" role="dialog" aria-modal="true" aria-label="Schedule a quick call">
+      <button class="calendly-modal-close" id="calendlyModalClose" aria-label="Close">&times;</button>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/a-langevoort-lancon?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -230,6 +239,50 @@
         window.scrollTo({top: 0, behavior: 'smooth'});
       };
     }
+
+    // Floating Contact Us CTA logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const cta = document.getElementById('floatingContactCta');
+      const faqItems = document.querySelectorAll('.faq-item');
+      if (cta && faqItems.length >= 3) {
+        const thirdFaq = faqItems[2];
+        function checkCtaVisibility() {
+          const rect = thirdFaq.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            cta.style.display = 'flex';
+          } else {
+            cta.style.display = 'none';
+          }
+        }
+        window.addEventListener('scroll', checkCtaVisibility);
+        window.addEventListener('resize', checkCtaVisibility);
+        checkCtaVisibility();
+      }
+      // Calendly Modal logic
+      const calendlyModal = document.getElementById('calendlyModal');
+      const calendlyModalClose = document.getElementById('calendlyModalClose');
+      const calendlyModalBackdrop = document.getElementById('calendlyModalBackdrop');
+      const faqEndCalendlyBtn = document.getElementById('faqEndCalendlyBtn');
+      function openCalendlyModal() {
+        calendlyModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeCalendlyModal() {
+        calendlyModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      if (cta && calendlyModal && calendlyModalClose && calendlyModalBackdrop) {
+        cta.addEventListener('click', openCalendlyModal);
+        if (faqEndCalendlyBtn) faqEndCalendlyBtn.addEventListener('click', openCalendlyModal);
+        calendlyModalClose.addEventListener('click', closeCalendlyModal);
+        calendlyModalBackdrop.addEventListener('click', closeCalendlyModal);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && calendlyModal.style.display === 'block') {
+            closeCalendlyModal();
+          }
+        });
+      }
+    });
   </script>
   <style>
     @media (max-width: 700px) {
@@ -285,6 +338,12 @@
         background: #ffe082;
         color: #003366;
       }
+      .floating-contact-cta {
+        right: 1rem;
+        bottom: 1rem;
+        font-size: 1rem;
+        padding: 0.8rem 1.3rem;
+      }
     }
     @media (min-width: 701px) {
       .sticky-cta-mobile {
@@ -326,7 +385,91 @@
       border-top: 1px solid #eee;
       background: #fafbfc;
     }
+    .floating-contact-cta {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--accent-color);
+      color: #003366;
+      font-weight: bold;
+      font-size: 1.13rem;
+      padding: 1rem 2.1rem;
+      border-radius: 32px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+    }
+    .floating-contact-cta:hover, .floating-contact-cta:focus {
+      background: #ffe082;
+      color: #003366;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+    .calendly-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .calendly-modal-backdrop {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1;
+    }
+    .calendly-modal-content {
+      position: relative;
+      z-index: 2;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      padding: 2rem 1.2rem 1.2rem 1.2rem;
+      max-width: 95vw;
+      width: 420px;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .calendly-modal-close {
+      position: absolute;
+      top: 0.7rem;
+      right: 1.1rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #888;
+      cursor: pointer;
+      z-index: 3;
+      transition: color 0.2s;
+    }
+    .calendly-modal-close:hover, .calendly-modal-close:focus {
+      color: #003366;
+    }
+    @media (max-width: 600px) {
+      .calendly-modal-content {
+        width: 99vw;
+        min-width: 0;
+        padding: 0.5rem 0.2rem 0.2rem 0.2rem;
+      }
+      .calendly-inline-widget {
+        height: 480px !important;
+      }
+    }
+    .calendly-inline-widget {
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
   </style>
-  <a href="index.html#schedule-call" class="sticky-cta-mobile">Schedule a Call</a>
 </body>
 </html> 

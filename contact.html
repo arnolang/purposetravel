@@ -63,21 +63,8 @@
             <h3 class="calendly-card-title">Book a Discovery Call</h3>
             <p class="calendly-card-desc">Schedule a free, no-obligation call to discuss your course goals and get a custom program proposal.</p>
             <div class="calendly-wrapper">
-              <div class="calendly-inline-widget" data-url="https://calendly.com/a-langevoort-lancon?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;"></div>
+              <div class="calendly-inline-widget" data-url="https://calendly.com/a-langevoort-lancon?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
               <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-              <script>
-                window.addEventListener('message', function(e) {
-                  if (typeof e.data === 'string' && e.data.indexOf('calendly') !== -1) {
-                    var data = JSON.parse(e.data);
-                    if (data.event && data.event.indexOf('calendly') === 0 && data.event === 'calendly:height') {
-                      var widget = document.querySelector('.calendly-inline-widget');
-                      if (widget && data.payload && data.payload.height) {
-                        widget.style.height = data.payload.height + 'px';
-                      }
-                    }
-                  }
-                });
-              </script>
             </div>
           </div>
         </div>
