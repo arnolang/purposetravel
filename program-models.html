@@ -15,6 +15,7 @@
   
      <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -81,7 +82,7 @@
           <li>Fan Culture & Community Relations</li>
         </ul>
         <div style="text-align: center; margin-top: 2rem;">
-          <a href="index.html#schedule-call" class="btn-primary">Start Designing Your Signature Program</a>
+          <a href="#" class="btn-primary" id="signatureProgramCalendlyBtn">Start Designing Your Signature Program</a>
         </div>
       </div>
     </section>
@@ -114,7 +115,7 @@
           </div>
         </div>
         <div style="text-align: center; margin-top: 2rem;">
-          <a href="index.html#schedule-call" class="btn-primary">Start Your Custom Deep Dive</a>
+          <a href="#" class="btn-primary" id="deepDiveCalendlyBtn">Start Your Custom Deep Dive</a>
         </div>
       </div>
     </section>
@@ -124,13 +125,58 @@
         <h2>What Students Gain: Real-World Skills & Global Perspective</h2>
         <p class="section-subtitle">Hear directly from students whose careers and perspectives were transformed by a <span class="brand-name">Sport Study Abroad</span> program.</p>
         <div class="success-stories">
-          <div class="story-card">
-            <img src="images/portraits/nadeem.JPG" alt="Professional headshot of Nadeem" loading="lazy">
-            <div>
-              <h4>Nadeem</h4>
-              <p class="story-title">Student, Guilford College</p>
-              <p>"This study abroad trip was genuinely one of the most meaningful and memorable experiences I've had during college. Getting the chance to explore cities while learning about sport, culture, and communication from people actually working in the field made everything we've talked about in class feel real and relevant. It wasn't just about sightseeing—it was about connecting what we've learned to the world around us, and that made a huge impact on me. The balance between academic content and cultural exploration was spot-on."</p>
-              <span class="story-program">Signature Program: Sport, Culture & Communication, 2024</span>
+          <div class="story-flex">
+            <!-- Left: Headshot and testimonial -->
+            <div class="story-card">
+              <img src="images/portraits/nadeem.JPG" alt="Professional headshot of Nadeem" loading="lazy">
+              <div>
+                <h4>Nadeem</h4>
+                <p class="story-title">Student, Guilford College</p>
+                <p>"This study abroad trip was genuinely one of the most meaningful and memorable experiences I've had during college. Getting the chance to explore cities while learning about sport, culture, and communication from people actually working in the field made everything we've talked about in class feel real and relevant. It wasn't just about sightseeing—it was about connecting what we've learned to the world around us, and that made a huge impact on me. The balance between academic content and cultural exploration was spot-on."</p>
+                <span class="story-program">Signature Program: Sport, Culture & Communication, 2024</span>
+              </div>
+            </div>
+            <!-- Right: Carousel -->
+            <div class="carousel-container">
+              <div class="swiper main-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem10.webp" alt="Nadeem program photo 10"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem01.webp" alt="Nadeem program photo 1"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem02.webp" alt="Nadeem program photo 2"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem03.webp" alt="Nadeem program photo 3"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem04.webp" alt="Nadeem program photo 4"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem05.webp" alt="Nadeem program photo 5"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem06.webp" alt="Nadeem program photo 6"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem07.webp" alt="Nadeem program photo 7"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem08.webp" alt="Nadeem program photo 8"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem09.webp" alt="Nadeem program photo 9"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem11.webp" alt="Nadeem program photo 11"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem12.webp" alt="Nadeem program photo 12"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem13.webp" alt="Nadeem program photo 13"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem14.webp" alt="Nadeem program photo 14"></div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div class="swiper thumbs-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem10.webp" alt="Nadeem program thumbnail 10"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem01.webp" alt="Nadeem program thumbnail 1"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem02.webp" alt="Nadeem program thumbnail 2"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem03.webp" alt="Nadeem program thumbnail 3"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem04.webp" alt="Nadeem program thumbnail 4"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem05.webp" alt="Nadeem program thumbnail 5"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem06.webp" alt="Nadeem program thumbnail 6"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem07.webp" alt="Nadeem program thumbnail 7"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem08.webp" alt="Nadeem program thumbnail 8"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem09.webp" alt="Nadeem program thumbnail 9"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem11.webp" alt="Nadeem program thumbnail 11"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem12.webp" alt="Nadeem program thumbnail 12"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem13.webp" alt="Nadeem program thumbnail 13"></div>
+                  <div class="swiper-slide"><img src="images/student_carousel/ student-carousel-nadeem14.webp" alt="Nadeem program thumbnail 14"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -408,7 +454,202 @@
       border-top: 1px solid #eee;
       background: #fafbfc;
     }
+    .story-flex {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .story-card {
+      flex: 1 1 320px;
+      min-width: 320px;
+      max-width: 420px;
+    }
+    .carousel-container {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      padding: 1.5rem 1rem;
+    }
+    .main-swiper {
+      width: 100%;
+      height: 350px;
+      border-radius: 18px;
+      margin-bottom: 1.1em;
+    }
+    .main-swiper .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+    .thumbs-swiper {
+      width: 100%;
+      height: 70px;
+      box-sizing: border-box;
+      padding-top: 0.2em;
+    }
+    .thumbs-swiper .swiper-slide {
+      width: 60px;
+      height: 60px;
+      opacity: 0.5;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border 0.2s, opacity 0.2s;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .thumbs-swiper .swiper-slide-thumb-active {
+      opacity: 1;
+      border: 2px solid #F4B400;
+      box-shadow: 0 2px 8px rgba(244,180,0,0.13);
+    }
+    .thumbs-swiper .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #fff;
+      background: #003366;
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+      width: 2.1em;
+      height: 2.1em;
+      top: 45%;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3em;
+      border: none;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      background: #F4B400;
+      color: #003366;
+      box-shadow: 0 6px 20px rgba(244,180,0,0.18);
+    }
+    @media (max-width: 900px) {
+      .story-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .carousel-container {
+        max-width: 100%;
+        padding: 1rem 0.2rem;
+      }
+      .main-swiper {
+        height: 220px;
+      }
+      .thumbs-swiper {
+        height: 48px;
+      }
+      .thumbs-swiper .swiper-slide {
+        width: 38px;
+        height: 38px;
+      }
+    }
   </style>
   <a href="index.html#schedule-call" class="sticky-cta-mobile">Schedule a Call</a>
+
+  <div id="calendlyModal" class="calendly-modal" style="display:none;">
+    <div class="calendly-modal-backdrop" id="calendlyModalBackdrop"></div>
+    <div class="calendly-modal-content" role="dialog" aria-modal="true" aria-label="Schedule a quick call">
+      <button class="calendly-modal-close" id="calendlyModalClose" aria-label="Close">&times;</button>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/a-langevoort-lancon?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendlyModal = document.getElementById('calendlyModal');
+      const calendlyModalClose = document.getElementById('calendlyModalClose');
+      const calendlyModalBackdrop = document.getElementById('calendlyModalBackdrop');
+      const signatureProgramCalendlyBtn = document.getElementById('signatureProgramCalendlyBtn');
+      const deepDiveCalendlyBtn = document.getElementById('deepDiveCalendlyBtn');
+      const navScheduleCall = document.querySelector('a.btn-nav[href="#schedule-call"]');
+      function openCalendlyModal() {
+        calendlyModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeCalendlyModal() {
+        calendlyModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      if (calendlyModal && calendlyModalClose && calendlyModalBackdrop) {
+        calendlyModalClose.addEventListener('click', closeCalendlyModal);
+        calendlyModalBackdrop.addEventListener('click', closeCalendlyModal);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && calendlyModal.style.display === 'flex') {
+            closeCalendlyModal();
+          }
+        });
+      }
+      if (navScheduleCall) {
+        navScheduleCall.addEventListener('click', function(e) {
+          e.preventDefault();
+          openCalendlyModal();
+        });
+      }
+      if (signatureProgramCalendlyBtn) {
+        signatureProgramCalendlyBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openCalendlyModal();
+        });
+      }
+      if (deepDiveCalendlyBtn) {
+        deepDiveCalendlyBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openCalendlyModal();
+        });
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var thumbsSwiper = new Swiper('.thumbs-swiper', {
+        spaceBetween: 8,
+        slidesPerView: 6,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+          0: { slidesPerView: 3 },
+          600: { slidesPerView: 5 },
+          900: { slidesPerView: 6 }
+        }
+      });
+      var mainSwiper = new Swiper('.main-swiper', {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+          swiper: thumbsSwiper
+        },
+        loop: true,
+        effect: 'slide',
+        centeredSlides: true,
+        slidesPerView: 1,
+        grabCursor: true,
+      });
+    });
+  </script>
 </body>
 </html>

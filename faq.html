@@ -283,6 +283,37 @@
         });
       }
     });
+
+    // Calendly Modal logic for nav Schedule a Call
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendlyModal = document.getElementById('calendlyModal');
+      const calendlyModalClose = document.getElementById('calendlyModalClose');
+      const calendlyModalBackdrop = document.getElementById('calendlyModalBackdrop');
+      const navScheduleCall = document.querySelector('a.btn-nav[href="#schedule-call"]');
+      function openCalendlyModal() {
+        calendlyModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeCalendlyModal() {
+        calendlyModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      if (calendlyModal && calendlyModalClose && calendlyModalBackdrop) {
+        calendlyModalClose.addEventListener('click', closeCalendlyModal);
+        calendlyModalBackdrop.addEventListener('click', closeCalendlyModal);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && calendlyModal.style.display === 'flex') {
+            closeCalendlyModal();
+          }
+        });
+      }
+      if (navScheduleCall) {
+        navScheduleCall.addEventListener('click', function(e) {
+          e.preventDefault();
+          openCalendlyModal();
+        });
+      }
+    });
   </script>
   <style>
     @media (max-width: 700px) {

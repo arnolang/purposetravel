@@ -43,10 +43,46 @@
     </nav>
   </header>
   <main>
-    <div class="container">
-      <h1>Terms of Use</h1>
-      <p>This is a placeholder for the <span class="brand-name">Sport Study Abroad</span> terms of use. Please update this section with your actual terms and conditions.</p>
-      <a href="index.html" class="btn-primary">Back to Home</a>
+    <div class="container" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
+      <div class="policy-card">
+        <h1>Terms of Use</h1>
+        <p><strong>Last updated: 2024-06-09</strong></p>
+        <p>Welcome to Sport Study Abroad (“we”, “us”, or “our”). By accessing or using our website (the “Site”), you agree to comply with and be bound by these Terms of Use. Please read them carefully. If you do not agree to these terms, please do not use our Site.</p>
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using this Site, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our <a href="privacy.html">Privacy Policy</a>.</p>
+        <h2>2. Changes to Terms</h2>
+        <p>We reserve the right to update or modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of the Site after changes are posted constitutes your acceptance of those changes. We recommend reviewing these Terms regularly.</p>
+        <h2>3. Use of the Website</h2>
+        <p>You agree to use the Site only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else’s use and enjoyment of the Site. Prohibited behavior includes, but is not limited to:</p>
+        <ul>
+          <li>Violating any applicable laws or regulations.</li>
+          <li>Infringing upon the rights of others, including intellectual property rights.</li>
+          <li>Attempting to gain unauthorized access to any part of the Site or its systems.</li>
+          <li>Transmitting any harmful, unlawful, or malicious code or content.</li>
+          <li>Engaging in any activity that could damage, disable, or impair the Site.</li>
+        </ul>
+        <h2>4. Intellectual Property Rights</h2>
+        <p>All content on this Site, including but not limited to text, graphics, logos, images, and software, is the property of Sport Study Abroad or its licensors and is protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without our express written permission, except as permitted by law.</p>
+        <h2>5. User Content and Conduct</h2>
+        <p>If you submit any content (such as forms, comments, or feedback), you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, display, and distribute such content. You are responsible for ensuring that your content does not violate any laws or infringe on any third-party rights. We reserve the right to remove any content at our discretion.</p>
+        <h2>6. Disclaimers</h2>
+        <p>The information provided on this Site is for general informational purposes only. While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the Site or the information, products, services, or related graphics contained on the Site for any purpose. Any reliance you place on such information is strictly at your own risk.</p>
+        <h2>7. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, Sport Study Abroad and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or punitive damages, or any loss or damage whatsoever arising from or in connection with your use of, or inability to use, the Site.</p>
+        <h2>8. Links to Other Websites</h2>
+        <p>Our Site may contain links to third-party websites for your convenience and information. We have no control over the content or availability of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+        <h2>9. Privacy Policy</h2>
+        <p>Your use of the Site is also governed by our <a href="privacy.html">Privacy Policy</a>, which explains how we collect, use, and protect your personal information.</p>
+        <h2>10. Termination</h2>
+        <p>We reserve the right to terminate or restrict your access to the Site at our sole discretion, without notice, for conduct that we believe violates these Terms or is otherwise harmful to other users or us.</p>
+        <h2>11. Governing Law and Jurisdiction</h2>
+        <p>These Terms are governed by and construed in accordance with the laws of the Netherlands. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of the Netherlands.</p>
+        <h2>12. Severability</h2>
+        <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
+        <h2>13. Contact Us</h2>
+        <p>If you have any questions about these Terms, please <a href="contact.html">contact us</a>.</p>
+        <a href="index.html" class="btn-primary">Back to Home</a>
+      </div>
     </div>
   </main>
   <footer>
@@ -107,6 +143,45 @@
         window.scrollTo({top: 0, behavior: 'smooth'});
       };
     }
+  </script>
+  <div id="calendlyModal" class="calendly-modal" style="display:none;">
+    <div class="calendly-modal-backdrop" id="calendlyModalBackdrop"></div>
+    <div class="calendly-modal-content" role="dialog" aria-modal="true" aria-label="Schedule a quick call">
+      <button class="calendly-modal-close" id="calendlyModalClose" aria-label="Close">&times;</button>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/a-langevoort-lancon?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendlyModal = document.getElementById('calendlyModal');
+      const calendlyModalClose = document.getElementById('calendlyModalClose');
+      const calendlyModalBackdrop = document.getElementById('calendlyModalBackdrop');
+      const navScheduleCall = document.querySelector('a.btn-nav[href="#schedule-call"]');
+      function openCalendlyModal() {
+        calendlyModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeCalendlyModal() {
+        calendlyModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      if (calendlyModal && calendlyModalClose && calendlyModalBackdrop) {
+        calendlyModalClose.addEventListener('click', closeCalendlyModal);
+        calendlyModalBackdrop.addEventListener('click', closeCalendlyModal);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && calendlyModal.style.display === 'flex') {
+            closeCalendlyModal();
+          }
+        });
+      }
+      if (navScheduleCall) {
+        navScheduleCall.addEventListener('click', function(e) {
+          e.preventDefault();
+          openCalendlyModal();
+        });
+      }
+    });
   </script>
 </body>
 </html> 
