@@ -4,20 +4,23 @@
 
 # --- Password Protection for Proposals ---
 #
+# SECURITY WARNING: Do NOT commit actual credentials to version control!
+# Use environment variables or Netlify's built-in authentication instead.
+#
 # INSTRUCTIONS:
 # 1. For each proposal, copy the rule below.
 # 2. Change "/proposal-template.html" to the actual file path of your proposal.
-# 3. Change "your-username" and "your-secure-password" to a unique, strong password for your client.
-# 4. Do NOT use spaces in the username or password.
+# 3. Use environment variables or Netlify's authentication system instead of hardcoded credentials.
+# 4. Consider using Netlify's password protection feature or JWT tokens for better security.
 
 /proposal-template.html
-  Basic-Auth: your-username:your-secure-password
+  Basic-Auth: $BASIC_AUTH_USER:$BASIC_AUTH_PASS
 
 # --- Active Client Proposals ---
-
-/belmont-2026-offer.html
-  Basic-Auth: belmont:aVerySecurePassword123
+# SECURITY: Use environment variables for credentials
+# Example: /belmont-2026-offer.html
+#   Basic-Auth: $BELMONT_USER:$BELMONT_PASS
 
 # --- Example for a real client proposal ---
 # /proposal-acme-corp.html
-#  Basic-Auth: acme-user:aVerySecurePassword123 
+#   Basic-Auth: $ACME_USER:$ACME_PASS 

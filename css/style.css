@@ -1006,6 +1006,13 @@
     background-color: #004080;
   }
   .interest-form .honeypot-field { display: none; }
+  
+  /* Form validation error styles */
+  .interest-form input.error,
+  .interest-form textarea.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+  }
   @media (max-width: 600px) {
     .interest-form {
       padding: 1.2rem 0.7rem;
