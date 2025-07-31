@@ -1,0 +1,21 @@
+{
+  "name": "sportstudyabroad",
+  "version": "1.0.0",
+  "description": "Sport Study Abroad - Custom faculty-led study abroad programs",
+  "main": "index.html",
+  "scripts": {
+    "generate-sitemap": "node generate-sitemap.js",
+    "build": "npm run generate-sitemap"
+  },
+  "keywords": [
+    "study-abroad",
+    "sport-management",
+    "education",
+    "travel"
+  ],
+  "author": "Sport Study Abroad",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+} 

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block any potential dev/staging patterns
+Disallow: /draft/
+Disallow: /404/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /_headers
+Disallow: /_redirects
+
+# Sitemap location
+Sitemap: https://www.sportstudyabroad.com/sitemap.xml 
