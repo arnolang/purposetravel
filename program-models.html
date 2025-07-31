@@ -509,6 +509,9 @@
       /* Ensure carousel is touch-friendly */
       -webkit-tap-highlight-color: transparent;
       touch-action: pan-y pinch-zoom;
+      /* Ensure proper sizing */
+      box-sizing: border-box;
+      overflow: hidden;
     }
     .main-swiper {
       width: 100%;
@@ -518,6 +521,9 @@
       /* Ensure swiper is touch-friendly */
       touch-action: pan-y pinch-zoom;
       -webkit-tap-highlight-color: transparent;
+      /* Ensure proper sizing */
+      box-sizing: border-box;
+      overflow: hidden;
     }
     .main-swiper .swiper-slide img {
       width: 100%;
@@ -598,16 +604,26 @@
       .story-flex {
         flex-direction: column;
         align-items: stretch;
+        gap: 1.5rem;
+      }
+      .story-card {
+        flex: 1 1 auto;
+        min-width: auto;
+        max-width: 100%;
       }
       .carousel-container {
         max-width: 100%;
-        padding: 1rem 0.2rem;
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
       }
       .main-swiper {
         height: 220px;
+        width: 100%;
       }
       .thumbs-swiper {
         height: 48px;
+        width: 100%;
       }
       .thumbs-swiper .swiper-slide {
         width: 38px;
@@ -626,14 +642,22 @@
     
     /* Additional mobile optimizations */
     @media (max-width: 480px) {
+      .story-flex {
+        gap: 1rem;
+      }
       .carousel-container {
-        padding: 0.8rem 0.1rem;
+        padding: 0.8rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
       }
       .main-swiper {
         height: 200px;
+        width: 100%;
       }
       .thumbs-swiper {
         height: 42px;
+        width: 100%;
       }
       .thumbs-swiper .swiper-slide {
         width: 34px;
