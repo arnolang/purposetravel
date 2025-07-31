@@ -144,9 +144,45 @@
       </div>
     </section>
     
-    <div style="text-align:center; margin: 2rem 0;">
-      <a href="#schedule-call" class="btn-primary">Schedule a Discovery Call</a>
-    </div>
+    <!-- 25 Years Legacy Section Start (moved below testimonials) -->
+    <section class="section-legacy-impact">
+      <div class="container">
+        <div class="legacy-header" style="display: flex; align-items: center; gap: 1.5rem;">
+          <span class="legacy-badge ribbon">25 Years of Impact</span>
+          <h2 style="margin: 0;">The European Model of Sport</h2>
+        </div>
+        <p>For more than 25 years, faculty have trusted us to bring their students behind the scenes of European sport.</p>
+        <p>Our <strong>Legacy Track</strong>, rooted in <em>The European Model of Sport</em>, is the foundation of our <strong>Signature Program</strong> — combining elite access, deep cultural immersion, and proven educational outcomes.</p>
+        <p>When you choose Sport Study Abroad, you're building on decades of results — not starting from scratch.</p>
+        <div class="legacy-timeline" style="margin: 2rem 0; text-align: center;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+            <span>1999</span>
+            <div style="flex: 1; height: 4px; background: #F4B400; border-radius: 2px; position: relative;">
+              <span style="position: absolute; left: 20%; top: -1.5em; font-size: 0.95em; color: #003366;">2010</span>
+              <span style="position: absolute; left: 60%; top: -1.5em; font-size: 0.95em; color: #003366;">2020</span>
+              <span style="position: absolute; right: -2.5em; top: -1.5em; font-size: 0.95em; color: #003366;">Signature Program</span>
+            </div>
+            <span>Today</span>
+          </div>
+        </div>
+        <div class="legacy-partners" style="display:none; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: center; margin: 2rem 0 1.5rem 0;">
+          <img src="images/logos/belmont_university_deprtment_of_sport_administration.svg" alt="Belmont University" style="height: 48px; max-width: 180px; object-fit: contain;">
+          <img src="images/logos/Guilford College Master of International Sport Management Logo.svg" alt="Guilford College" style="height: 48px; max-width: 180px; object-fit: contain;">
+          <!-- Add more logos as needed -->
+        </div>
+        <div class="legacy-photo-grid" style="display:none; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+          <!-- Placeholder for photo grid from 25 years of experiences -->
+          <div style="width: 100px; height: 70px; background: #eee; border-radius: 6px;"></div>
+          <div style="width: 100px; height: 70px; background: #eee; border-radius: 6px;"></div>
+          <div style="width: 100px; height: 70px; background: #eee; border-radius: 6px;"></div>
+        </div>
+        <div class="cta-row">
+          <a href="program-models.html#legacy-track" class="cta-button primary">Explore Legacy Track</a>
+          <a href="#contact" class="cta-button secondary" id="ctaDiscoveryCallBtn">Schedule a Discovery Call</a>
+        </div>
+      </div>
+    </section>
+    <!-- 25 Years Legacy Section End -->
 
     <section class="section-cta" id="schedule-call">
       <div class="container">
@@ -219,6 +255,7 @@
       <hr class="footer-divider">
       <div class="footer-bottom">
         <span>© 2025 Purpose Travel</span>
+        <span class="legacy-badge" style="margin-left: 1.5rem;">25 Years of Impact</span>
       </div>
     </div>
   </footer>
@@ -388,5 +425,46 @@
     };
   })();
   </script>
+
+<!-- Calendly Modal (add at end of body, before </body>) -->
+<div id="calendlyModal" class="calendly-modal" style="display:none;">
+  <div class="calendly-modal-backdrop" id="calendlyModalBackdrop"></div>
+  <div class="calendly-modal-content" role="dialog" aria-modal="true" aria-label="Schedule a quick call">
+    <button class="calendly-modal-close" id="calendlyModalClose" aria-label="Close">&times;</button>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/a-langevoort-lancon?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+  </div>
+</div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const calendlyModal = document.getElementById('calendlyModal');
+  const calendlyModalClose = document.getElementById('calendlyModalClose');
+  const calendlyModalBackdrop = document.getElementById('calendlyModalBackdrop');
+  const ctaDiscoveryCallBtn = document.getElementById('ctaDiscoveryCallBtn');
+  function openCalendlyModal() {
+    calendlyModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCalendlyModal() {
+    calendlyModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  if (calendlyModal && calendlyModalClose && calendlyModalBackdrop) {
+    calendlyModalClose.addEventListener('click', closeCalendlyModal);
+    calendlyModalBackdrop.addEventListener('click', closeCalendlyModal);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && calendlyModal.style.display === 'flex') {
+        closeCalendlyModal();
+      }
+    });
+  }
+  if (ctaDiscoveryCallBtn) {
+    ctaDiscoveryCallBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openCalendlyModal();
+    });
+  }
+});
+</script>
 </body>
 </html>
