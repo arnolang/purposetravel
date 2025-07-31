@@ -244,9 +244,21 @@
     document.addEventListener('DOMContentLoaded', function() {
       const cta = document.getElementById('floatingContactCta');
       const faqItems = document.querySelectorAll('.faq-item');
+      
+      // Only show floating CTA on desktop (min-width: 701px)
+      function isDesktop() {
+        return window.innerWidth >= 701;
+      }
+      
       if (cta && faqItems.length >= 3) {
         const thirdFaq = faqItems[2];
         function checkCtaVisibility() {
+          // Only show floating CTA on desktop
+          if (!isDesktop()) {
+            cta.style.display = 'none';
+            return;
+          }
+          
           const rect = thirdFaq.getBoundingClientRect();
           if (rect.bottom < 0) {
             cta.style.display = 'flex';
@@ -369,16 +381,18 @@
         background: #ffe082;
         color: #003366;
       }
+      /* Hide floating button on mobile to avoid redundancy */
       .floating-contact-cta {
-        right: 1rem;
-        bottom: 1rem;
-        font-size: 1rem;
-        padding: 0.8rem 1.3rem;
+        display: none !important;
       }
     }
     @media (min-width: 701px) {
       .sticky-cta-mobile {
         display: none !important;
+      }
+      /* Show floating button on desktop */
+      .floating-contact-cta {
+        display: flex !important;
       }
     }
     .faq-list {
@@ -432,7 +446,7 @@
       transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       border: none;
       outline: none;
-      display: flex;
+      display: none; /* Hidden by default, shown via JavaScript on desktop */
       align-items: center;
       gap: 0.7em;
     }
