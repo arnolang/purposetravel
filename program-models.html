@@ -493,6 +493,9 @@
       align-items: flex-start;
       justify-content: center;
       flex-wrap: wrap;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     .story-card {
       flex: 1 1 320px;
@@ -500,7 +503,8 @@
       max-width: 420px;
     }
     .carousel-container {
-      max-width: 520px;
+      max-width: 520px !important;
+      width: 100% !important;
       margin: 0 auto;
       background: #fff;
       border-radius: 22px;
@@ -512,6 +516,9 @@
       /* Ensure proper sizing */
       box-sizing: border-box;
       overflow: hidden;
+      /* Prevent any inherited width issues */
+      min-width: 0;
+      flex-shrink: 1;
     }
     .main-swiper {
       width: 100%;
@@ -612,18 +619,23 @@
         max-width: 100%;
       }
       .carousel-container {
-        max-width: 100%;
-        width: 100%;
+        max-width: 100% !important;
+        width: 100% !important;
         padding: 1rem;
         margin: 0;
+        /* Ensure it doesn't overflow */
+        overflow: hidden;
+        box-sizing: border-box;
       }
       .main-swiper {
         height: 220px;
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .thumbs-swiper {
         height: 48px;
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .thumbs-swiper .swiper-slide {
         width: 38px;
@@ -644,20 +656,30 @@
     @media (max-width: 480px) {
       .story-flex {
         gap: 1rem;
+        width: 100%;
+        max-width: 100%;
       }
       .carousel-container {
         padding: 0.8rem;
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         margin: 0;
+        /* Force proper sizing */
+        flex: 1 1 100%;
+        min-width: 0;
+        overflow: hidden;
       }
       .main-swiper {
         height: 200px;
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
       }
       .thumbs-swiper {
         height: 42px;
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
       }
       .thumbs-swiper .swiper-slide {
         width: 34px;
