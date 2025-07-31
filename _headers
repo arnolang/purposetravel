@@ -1,0 +1,23 @@
+# =================================================================
+# Netlify Headers File
+# =================================================================
+
+# --- Password Protection for Proposals ---
+#
+# INSTRUCTIONS:
+# 1. For each proposal, copy the rule below.
+# 2. Change "/proposal-template.html" to the actual file path of your proposal.
+# 3. Change "your-username" and "your-secure-password" to a unique, strong password for your client.
+# 4. Do NOT use spaces in the username or password.
+
+/proposal-template.html
+  Basic-Auth: your-username:your-secure-password
+
+# --- Active Client Proposals ---
+
+/belmont-2026-offer.html
+  Basic-Auth: belmont:aVerySecurePassword123
+
+# --- Example for a real client proposal ---
+# /proposal-acme-corp.html
+#  Basic-Auth: acme-user:aVerySecurePassword123 
