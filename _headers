@@ -20,8 +20,4 @@
 
 # --- Example for a real client proposal ---
 # /proposal-acme-corp.html
-#  Basic-Auth: acme-user:aVerySecurePassword123
-
-# --- WebP Image Support ---
-*.webp
-  Content-Type: image/webp 
+#  Basic-Auth: acme-user:aVerySecurePassword123 
