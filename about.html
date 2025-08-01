@@ -117,6 +117,14 @@
   </div>
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script>
+    // Mobile menu functionality
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    navToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
       const calendlyModal = document.getElementById('calendlyModal');
       const calendlyModalClose = document.getElementById('calendlyModalClose');
