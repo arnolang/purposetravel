@@ -1982,3 +1982,23 @@
   }
 }
   
+/* Sticky mobile CTA button without layout shift */
+@media (max-width: 640px) {
+  #ctaDiscoveryCallBtn {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 360px;
+    z-index: 2000;
+  }
+
+  /* Reserve space where the button originally sits to prevent CLS */
+  .cta-row::after {
+    content: "";
+    display: block;
+    height: 60px; /* approximate button height inc. margins */
+  }
+}
+  
