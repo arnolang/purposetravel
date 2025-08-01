@@ -204,14 +204,23 @@
       document.cookie = name + '=' + (value || '')  + expires + '; path=/';
     }
     function getCookie(name) {
-      var nameEQ = name + '=';
-      var ca = document.cookie.split(';');
-      for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      if (!name || typeof name !== 'string') return null;
+      
+      try {
+        const nameEQ = name + '=';
+        const cookies = document.cookie.split(';');
+        
+        for (let i = 0; i < cookies.length; i++) {
+          let cookie = cookies[i].trim();
+          if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length);
+          }
+        }
+        return null;
+      } catch (error) {
+        console.warn('Error parsing cookies:', error);
+        return null;
       }
-      return null;
     }
     if (!getCookie('cookieConsent')) {
       fetch('https://ipapi.co/json/')
