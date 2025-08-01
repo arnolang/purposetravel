@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block non-production or error pages
+Disallow: /draft/
+Disallow: /404/
+
+Sitemap: https://www.sportstudyabroad.com/sitemap.xml
