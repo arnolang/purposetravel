@@ -732,5 +732,30 @@
     };
   })();
   </script>
+  <script>
+    // FAQ expand/collapse functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqAccordion = document.getElementById('faqAccordion');
+      if (faqAccordion) {
+        faqAccordion.querySelectorAll('.faq-question').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            const answer = btn.nextElementSibling;
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            // Optionally: close all others for accordion behavior
+            faqAccordion.querySelectorAll('.faq-question').forEach(function(otherBtn) {
+              if (otherBtn !== btn) {
+                otherBtn.setAttribute('aria-expanded', 'false');
+                if (otherBtn.nextElementSibling) {
+                  otherBtn.nextElementSibling.hidden = true;
+                }
+              }
+            });
+            btn.setAttribute('aria-expanded', String(!expanded));
+            if (answer) answer.hidden = expanded;
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
