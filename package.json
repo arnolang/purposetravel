@@ -4,7 +4,25 @@
   "description": "Static site for Sport Study Abroad with SEO build tasks",
   "type": "commonjs",
   "scripts": {
-    "build": "node seo-build.js"
+    "build": "node seo-build.js",
+    "test": "vitest",
+    "lint": "eslint . --ext js,jsx,html",
+    "build:css": "postcss css/style.css -o css/style.min.css --env production"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "imagemin": "^9.0.1",
+    "imagemin-cli": "^8.0.0",
+    "imagemin-webp": "^8.0.0",
+    "vitest": "^1.5.0",
+    "postcss": "^8.4.34",
+    "postcss-cli": "^10.1.0",
+    "cssnano": "^6.0.1",
+    "@fullhuman/postcss-purgecss": "^5.0.0"
   },
   "engines": {
     "node": ">=14"

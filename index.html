@@ -12,9 +12,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Preload critical hero image -->
+  <link rel="preload" as="image" href="images/hero-sport-study.webp" imagesrcset="images/hero-sport-study.webp" imagesizes="100vw" />
+  <!-- Preload Google Fonts stylesheet -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" />
   
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css" onerror="this.href='css/style.css'">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
   <script type="text/javascript">
@@ -49,7 +52,10 @@
       </div>
     </nav>
     <div class="hero">
-      <div class="hero-bg"></div>
+      <picture>
+        <source type="image/webp" srcset="images/hero-sport-study.webp" />
+        <img src="images/hero-sport-study.jpg" alt="Sport Study Abroad hero background" loading="lazy" decoding="async" width="1920" height="1080" />
+      </picture>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <h1>Take Your Sport Management Course Abroad — Without the Extra Work</h1>
@@ -436,78 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var form = document.getElementById("interest-form");
-    var thankYou = document.getElementById("thank-you-message");
-
-    if (form) {
-      form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        // Basic form validation
-        const requiredFields = form.querySelectorAll('[required]');
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-          if (!field.value.trim()) {
-            isValid = false;
-            field.classList.add('error');
-          } else {
-            field.classList.remove('error');
-          }
-        });
-        
-        // Email validation
-        const emailField = form.querySelector('input[type="email"]');
-        if (emailField && emailField.value) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(emailField.value)) {
-            isValid = false;
-            emailField.classList.add('error');
-          }
-        }
-        
-        if (!isValid) {
-          alert("Please fill in all required fields correctly.");
-          return;
-        }
-        
-        // Get the submit button and disable it
-        var submitBtn = form.querySelector('button[type="submit"]');
-        var originalText = submitBtn.textContent;
-        submitBtn.textContent = "Sending...";
-        submitBtn.disabled = true;
-        
-        // Submit the form data to Netlify
-        var formData = new FormData(form);
-        fetch("/", {
-          method: "POST",
-          body: formData,
-          headers: { "Accept": "application/x-www-form-urlencoded" }
-        }).then(function(response) {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          // Hide the form and show thank you message
-          form.style.display = "none";
-          thankYou.style.display = "block";
-        }).catch(function(error) {
-          console.error('Form submission error:', error);
-          // Re-enable the button and show error
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-          
-          // Show more specific error message
-          let errorMessage = "There was a problem submitting the form. Please try again.";
-          if (error.name === 'TypeError' && error.message.includes('fetch')) {
-            errorMessage = "Network error. Please check your internet connection and try again.";
-          }
-          alert(errorMessage);
-        });
-      });
-    }
-  });
-</script>
+<script type="module" src="js/form-validation.js"></script>
+<script type="module" src="js/auto-alt.js"></script>
 </body>
 </html>

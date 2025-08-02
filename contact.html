@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css" onerror="this.href='css/style.css'">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -242,40 +242,7 @@
     };
   })();
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var form = document.getElementById("contact-form");
-      var thankYou = document.getElementById("thank-you-message");
-
-      if (form) {
-        form.addEventListener("submit", function(event) {
-          event.preventDefault();
-          
-          // Get the submit button and disable it
-          var submitBtn = form.querySelector('button[type="submit"]');
-          var originalText = submitBtn.textContent;
-          submitBtn.textContent = "Sending...";
-          submitBtn.disabled = true;
-          
-          // Submit the form data to Netlify
-          var formData = new FormData(form);
-          fetch("/", {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/x-www-form-urlencoded" }
-          }).then(function() {
-            // Hide the form and show thank you message
-            form.style.display = "none";
-            thankYou.style.display = "block";
-          }).catch(function(error) {
-            // Re-enable the button and show error
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            alert("There was a problem submitting the form. Please try again.");
-          });
-        });
-      }
-    });
-  </script>
+  <script type="module" src="js/form-validation.js"></script>
+  <script type="module" src="js/auto-alt.js"></script>
 </body>
 </html> 
