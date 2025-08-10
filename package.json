@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node seo-build.js",
     "test": "vitest",
-    "lint": "eslint . --ext js,jsx,html",
+    "lint": "eslint \"**/*.js\"",
     "build:css": "postcss css/style.css -o css/style.min.css --env production",
     "build:apple-icon": "node scripts/generate-apple-icon.js"
   },
