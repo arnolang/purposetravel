@@ -5,7 +5,7 @@ module.exports = {
   plugins: [
     purgecss({
       content: ['./**/*.html', './**/*.js'],
-      defaultExtractor: (content) => content.match(/[^<>()"\'`\s]*[^<>()"\'`\s:]/g) || [],
+      defaultExtractor: (content) => content.match(/[^<>()"'`\s]*[^<>()"'`\s:]/g) || [],
     }),
     cssnano({ preset: 'default' }),
   ],

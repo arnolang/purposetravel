@@ -6,8 +6,9 @@
   "scripts": {
     "build": "node seo-build.js",
     "test": "vitest",
-    "lint": "eslint . --ext js,jsx,html",
-    "build:css": "postcss css/style.css -o css/style.min.css --env production"
+    "lint": "eslint \"**/*.js\"",
+    "build:css": "postcss css/style.css -o css/style.min.css --env production",
+    "build:apple-icon": "node scripts/generate-apple-icon.js"
   },
   "dependencies": {
     "zod": "^3.22.4"
@@ -22,7 +23,8 @@
     "postcss": "^8.4.34",
     "postcss-cli": "^10.1.0",
     "cssnano": "^6.0.1",
-    "@fullhuman/postcss-purgecss": "^5.0.0"
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "sharp": "^0.33.4"
   },
   "engines": {
     "node": ">=14"

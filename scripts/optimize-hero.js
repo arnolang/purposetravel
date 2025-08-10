@@ -1,6 +1,5 @@
 const imagemin = require('imagemin').default;
 const imageminWebp = require('imagemin-webp').default;
-const path = require('path');
 
 (async () => {
   try {
